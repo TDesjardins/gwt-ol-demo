@@ -20,16 +20,13 @@ public class Screen02Component extends AbstractComponent<IScreen02Component.Cont
         card = Card.create("Map in a card");
         card.setWidth("600px");
         card.getBody().setAttribute("id", "mapCard");
-        //card.getBody().style().remove("body");
-        card.getBody().style().setMarginTop("0px");
+        card.getBody().style().setPadding("0px");
         initElement(card.asElement());
 
     }
 
     @Override
     public void edit(MyModel model) {
-        // TODO Auto-generated method stub
-
     }
 
 }
