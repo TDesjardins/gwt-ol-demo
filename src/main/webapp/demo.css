@@ -1,0 +1,28 @@
+/*.flex-layout-badge {
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.card {
+    margin-bottom: 20px;
+    //border-left: 5px solid rgb(63, 81, 181);
+}
+
+.form-group {
+    margin-bottom: 0px;
+}*/
+.card .body .grid-col {
+    margin-bottom: 0px;
+}
+
+/*@media only screen and (min-width: 601px) {
+    .content-panel {
+        padding-right: 0px important!;
+        padding-left: 0px important!;
+        margin-right: auto important!;
+        margin-left: auto important!;
+    }
+}
+
+.content {
+    padding-bottom: 0px;*/
