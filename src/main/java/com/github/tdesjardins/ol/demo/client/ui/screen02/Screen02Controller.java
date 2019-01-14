@@ -21,6 +21,7 @@ implements IScreen02Component.Controller {
 
     @Override
     public void start() {
+        context.unfitLayout();
         // Here we simulate the creation of a model.
         // In the real world we would do a server call or
         // something else to get the data.
@@ -33,4 +34,5 @@ implements IScreen02Component.Controller {
 
         DemoUtils.createDefaultMap("mapCard");
     }
+
 }
