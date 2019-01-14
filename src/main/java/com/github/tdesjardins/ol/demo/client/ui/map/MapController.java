@@ -22,6 +22,7 @@ public class MapController extends AbstractComponentController<GwtOlDemoContext,
 
     @Override
     public void start() {
+        context.fitLayout();
 
         model = new MyModel("This is a map based on OpenLayers.");
 

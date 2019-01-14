@@ -8,6 +8,9 @@ import org.dominokit.domino.ui.layout.Layout;
 import org.dominokit.domino.ui.style.ColorScheme;
 
 import elemental2.dom.CSSProperties;
+import org.dominokit.domino.ui.style.Unit;
+
+import static org.dominokit.domino.ui.style.Unit.*;
 
 @Shell("application")
 public class ApplicationShell extends AbstractShell<GwtOlDemoContext> {
@@ -21,11 +24,17 @@ public class ApplicationShell extends AbstractShell<GwtOlDemoContext> {
     @Override
     public void attachShell() {
         layout = Layout.create("Simple Map Application using Domino-UI, Nalu and GWT-OL")
-        .show(ColorScheme.INDIGO);
-        layout.showFooter().fixFooter().getFooter().asElement().style.minHeight = CSSProperties.MinHeightUnionType.of("42px");
+        .show(ColorScheme.INDIGO)
+        .fitWidth()
+        .fitHeight();
+
+        layout.showFooter()
+                .apply(l -> l.getFooter().style().setMinHeight(px.of(42)))
+                .fixFooter();
         layout.getFooter().setId("footer");
         layout.getLeftPanel().setId("navigation");
         layout.getContentPanel().setId("content");
+        context.setLayout(layout);
     }
 
     @Override

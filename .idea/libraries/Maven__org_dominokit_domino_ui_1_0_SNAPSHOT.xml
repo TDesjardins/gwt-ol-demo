@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.dominokit:domino-ui:1.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/dominokit/domino-ui/1.0-SNAPSHOT/domino-ui-1.0-20190113.183641-362.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/dominokit/domino-ui/1.0-SNAPSHOT/domino-ui-1.0-20190113.183641-362-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/dominokit/domino-ui/1.0-SNAPSHOT/domino-ui-1.0-20190113.183641-362-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
