@@ -1,27 +1,32 @@
 package com.github.tdesjardins.ol.demo.client.ui.map;
 
 import com.github.nalukit.nalu.client.component.AbstractComponent;
-import com.github.tdesjardins.ol.demo.client.model.MyModel;
-
+import com.github.tdesjardins.ol.demo.client.utils.DemoUtils;
 import elemental2.dom.DomGlobal;
 import elemental2.dom.Element;
 import elemental2.dom.HTMLElement;
-import java.lang.Override;
 
-public class MapComponent extends AbstractComponent<IMapComponent.Controller, HTMLElement> implements IMapComponent {
+public class MapComponent
+    extends AbstractComponent<IMapComponent.Controller, HTMLElement>
+    implements IMapComponent {
 
-    public MapComponent() {
-        super();
-    }
+  private static final String MAP_ID = "map";
 
-    @Override
-    public void edit(MyModel model) {
-    }
+  public MapComponent() {
+    super();
+  }
 
-    @Override
-    public void render() {
-        Element container = DomGlobal.document.createElement("div");
-        initElement((HTMLElement)container);
-    }
+  @Override
+  public void edit() {
+    DemoUtils.createDefaultMap(MapComponent.MAP_ID);
+  }
+
+  @Override
+  public void render() {
+    Element container = DomGlobal.document.createElement("div");
+    container.setAttribute("id",
+                           MapComponent.MAP_ID);
+    initElement((HTMLElement) container);
+  }
 
 }

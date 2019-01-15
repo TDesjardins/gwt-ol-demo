@@ -6,7 +6,7 @@ import elemental2.dom.HTMLElement;
 
 public interface IScreen02Component extends IsComponent<IScreen02Component.Controller, HTMLElement> {
 
-    void edit(MyModel model);
+    void edit();
 
     interface Controller extends IsComponent.Controller {}
 
