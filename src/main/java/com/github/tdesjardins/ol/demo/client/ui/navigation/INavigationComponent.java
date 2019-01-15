@@ -5,7 +5,9 @@ import elemental2.dom.HTMLElement;
 import java.lang.String;
 
 public interface INavigationComponent extends IsComponent<INavigationComponent.Controller, HTMLElement> {
-  interface Controller extends IsComponent.Controller {
-    void doNavigateTo(String target);
-  }
+
+    interface Controller extends IsComponent.Controller {
+
+        void doNavigateTo(String target);
+    }
 }

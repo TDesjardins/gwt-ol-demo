@@ -12,51 +12,50 @@ import static org.dominokit.domino.ui.style.Unit.px;
 
 @Shell("application")
 public class ApplicationShell
-    extends AbstractShell<GwtOlDemoContext> {
+        extends AbstractShell<GwtOlDemoContext> {
 
-  private Layout layout;
+    private Layout layout;
 
-  public ApplicationShell() {
-    super();
-  }
+    public ApplicationShell() {
+        super();
+    }
 
-  @Override
-  public void attachShell() {
-    layout = Layout.create("Simple Map Application using Domino-UI, Nalu and GWT-OL")
-                   .show(ColorScheme.INDIGO)
-                   .fitWidth()
-                   .fitHeight();
+    @Override
+    public void attachShell() {
 
-    layout.showFooter()
-          .apply(l -> l.getFooter()
-                       .style()
-                       .setMinHeight(px.of(42)))
-          .fixFooter();
-    layout.getFooter()
-          .setId("footer");
-    layout.getLeftPanel()
-          .setId("navigation");
-    layout.getContentPanel()
-          .setId("content");
-  }
+        layout = Layout.create("Simple Map Application using Domino-UI, Nalu and GWT-OL")
+                .show(ColorScheme.INDIGO)
+                .fitWidth()
+                .fitHeight();
 
-  @Override
-  public void detachShell() {
-    this.layout.remove();
-  }
+        layout.showFooter()
+                .apply(layout -> layout.getFooter().style().setMinHeight(px.of(42)))
+                .fixFooter();
 
-  @Override
-  public void bind() {
-    this.eventBus.addHandler(FitLayoutEvent.TYPE,
-                             e -> {
-                               layout.fitWidth();
-                               layout.fitHeight();
-                             });
-    this.eventBus.addHandler(UnFitLayoutEvent.TYPE,
-                             e -> {
-                               layout.unfitWidth();
-                               layout.unfitHeight();
-                             });
-  }
+        layout.getFooter().setId("footer");
+        layout.getLeftPanel().setId("navigation");
+        layout.getContentPanel().setId("content");
+    }
+
+    @Override
+    public void detachShell() {
+        this.layout.remove();
+    }
+
+    @Override
+    public void bind() {
+
+        this.eventBus.addHandler(FitLayoutEvent.TYPE,
+                event -> {
+                    layout.fitWidth();
+                    layout.fitHeight();
+                });
+
+        this.eventBus.addHandler(UnFitLayoutEvent.TYPE,
+                event -> {
+                    layout.unfitWidth();
+                    layout.unfitHeight();
+                });
+    }
 
 }
