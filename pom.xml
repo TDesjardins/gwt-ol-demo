@@ -22,7 +22,7 @@
         <!-- DominoUI version -->
         <domino.version>1.0-SNAPSHOT</domino.version>
         <!-- gwt-ol version -->
-        <gwtol.version>7.0.0</gwtol.version>
+        <gwtol.version>7.1.0</gwtol.version>
         <!-- plugin versions -->
         <plugin.version.eclipse.lifecyle>1.0.0</plugin.version.eclipse.lifecyle>
         <plugin.version.maven.compiler>3.6.1</plugin.version.maven.compiler>
