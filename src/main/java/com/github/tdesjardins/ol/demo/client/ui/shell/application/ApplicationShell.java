@@ -29,7 +29,7 @@ public class ApplicationShell
                 .fitHeight();
 
         layout.showFooter()
-                .apply(layout -> layout.getFooter().style().setMinHeight(px.of(42)))
+                .apply(layout -> layout.getFooter().style().setMinHeight(px.of(0)))
                 .fixFooter();
 
         layout.getFooter().setId("footer");
