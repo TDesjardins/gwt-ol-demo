@@ -20,6 +20,7 @@ implements IScreen02Component.Controller {
     public void start() {
 
         this.eventBus.fireEvent(new UnFitLayoutEvent());
+        this.router.storeInCache(this);
         this.component.edit();
         this.eventBus.fireEvent(new StatusChangeEvent("Map in a card"));
 
