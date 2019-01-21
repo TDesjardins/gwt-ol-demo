@@ -26,7 +26,7 @@ public class DemoUtils {
         throw new AssertionError();
     }
 
-    public static void createDefaultMap(String mapId) {
+    public static Map createDefaultMap(String mapId) {
 
         // create a OSM-layer
         XyzOptions osmSourceOptions = OLFactory.createOptions();
@@ -77,6 +77,8 @@ public class DemoUtils {
 
             }
         });
+
+        return map;
 
     }
 

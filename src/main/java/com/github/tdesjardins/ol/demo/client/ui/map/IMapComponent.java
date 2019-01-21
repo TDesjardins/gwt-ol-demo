@@ -5,8 +5,10 @@ import elemental2.dom.HTMLElement;
 
 public interface IMapComponent extends IsComponent<IMapComponent.Controller, HTMLElement> {
 
-    void edit();
+    interface Controller extends IsComponent.Controller {
 
-    interface Controller extends IsComponent.Controller {}
+        String getMapId();
+
+    }
 
 }
