@@ -26,7 +26,6 @@ public class MapController extends AbstractComponentController<GwtOlDemoContext,
     @Override
     public void start() {
         this.router.storeInCache(this);
-        this.eventBus.fireEvent(new FitLayoutEvent());
         this.map = DemoUtils.createDefaultMap(MAP_ID);
         this.eventBus.fireEvent(new StatusChangeEvent("Map"));
     }
