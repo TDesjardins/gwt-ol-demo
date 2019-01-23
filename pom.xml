@@ -91,9 +91,15 @@
             <classifier>sources</classifier>
         </dependency>
         <dependency>
-            <groupId>com.github.tdesjardins</groupId>
-            <artifactId>gwt-ol3</artifactId>
-            <version>${gwtol.version}</version>
+            <groupId>org.dominokit</groupId>
+            <artifactId>domino-ui-ol-addon</artifactId>
+            <version>${domino.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.dominokit</groupId>
+            <artifactId>domino-ui-ol-addon</artifactId>
+            <version>${domino.version}</version>
+            <classifier>sources</classifier>
         </dependency>
     </dependencies>
 
