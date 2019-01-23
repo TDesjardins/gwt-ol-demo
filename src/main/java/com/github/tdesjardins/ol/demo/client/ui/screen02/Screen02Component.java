@@ -4,7 +4,8 @@ import com.github.nalukit.nalu.client.component.AbstractComponent;
 import com.github.tdesjardins.ol.demo.client.utils.DemoUtils;
 
 import elemental2.dom.HTMLElement;
-import org.dominokit.domino.ui.cards.Card;
+
+import org.dominokit.addons.ol.ui.MapCard;
 import org.dominokit.domino.ui.grid.Column;
 import org.dominokit.domino.ui.grid.Row;
 import org.dominokit.domino.ui.utils.DominoElement;
@@ -20,13 +21,13 @@ public class Screen02Component extends AbstractComponent<IScreen02Component.Cont
     @Override
     public void render() {
 
+        MapCard mapCard = new MapCard(Screen02Component.MAP_ID, "Map in a card");
+
         initElement(DominoElement.div()
                 .appendChild(Row.create()
                         .addColumn(Column.span8()
                                 .offset2()
-                                .appendChild(Card.create("Map in a card")
-                                        .fitContent()
-                                        .apply(element -> element.getBody().setId(Screen02Component.MAP_ID)))
+                                .appendChild(mapCard)
                         )).asElement());
 
     }

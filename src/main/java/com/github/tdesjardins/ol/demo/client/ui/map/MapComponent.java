@@ -1,8 +1,9 @@
 package com.github.tdesjardins.ol.demo.client.ui.map;
 
 import com.github.nalukit.nalu.client.component.AbstractComponent;
-import elemental2.dom.DomGlobal;
-import elemental2.dom.Element;
+
+import org.dominokit.addons.ol.ui.MapView;
+
 import elemental2.dom.HTMLElement;
 
 public class MapComponent
@@ -15,9 +16,8 @@ public class MapComponent
 
     @Override
     public void render() {
-        Element container = DomGlobal.document.createElement("div");
-        container.setAttribute("id", getController().getMapId());
-        initElement((HTMLElement)container);
+        MapView mapView = new MapView(getController().getMapId());
+        initElement(mapView.asElement());
     }
 
 }
