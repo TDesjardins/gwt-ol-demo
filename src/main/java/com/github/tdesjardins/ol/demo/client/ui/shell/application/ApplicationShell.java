@@ -8,8 +8,6 @@ import com.github.tdesjardins.ol.demo.client.event.UnFitLayoutEvent;
 import org.dominokit.domino.ui.layout.Layout;
 import org.dominokit.domino.ui.style.ColorScheme;
 
-import static org.dominokit.domino.ui.style.Unit.px;
-
 @Shell("application")
 public class ApplicationShell
         extends AbstractShell<GwtOlDemoContext> {
@@ -23,16 +21,12 @@ public class ApplicationShell
     @Override
     public void attachShell() {
 
-        layout = Layout.create("Simple Map Application using Domino-UI, Nalu and GWT-OL")
+        layout = Layout.create("GWT-OL Demo")
                 .show(ColorScheme.INDIGO)
+                .hideFooter()
                 .fitWidth()
                 .fitHeight();
 
-        layout.showFooter()
-                .apply(layout -> layout.getFooter().style().setMinHeight(px.of(0)))
-                .fixFooter();
-
-        layout.getFooter().setId("footer");
         layout.getLeftPanel().setId("navigation");
         layout.getContentPanel().setId("content");
     }
