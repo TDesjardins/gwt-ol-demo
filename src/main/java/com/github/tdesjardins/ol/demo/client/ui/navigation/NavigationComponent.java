@@ -9,29 +9,26 @@ import org.dominokit.domino.ui.tree.TreeItem;
 
 public class NavigationComponent extends AbstractComponent<INavigationComponent.Controller, HTMLElement> implements INavigationComponent {
 
-    private TreeItem mapItem;
-
-    private TreeItem mapCardItem;
+    private Tree tree;
 
     public NavigationComponent() {
         super();
+        this.tree = Tree.create("Navigation");
     }
 
     @Override
     public void render() {
 
-        this.mapItem = TreeItem.create("OSM Map", Icons.ALL.map())
-        .addClickListener(e -> getController().doNavigateTo("map"));
-
-        this.mapCardItem = TreeItem.create("Card with map", Icons.ALL.map())
-        .addClickListener(e -> getController().doNavigateTo("mapCard"));
-
-        Tree tree = Tree.create("Navigation");
-        tree.appendChild(mapItem);
-        tree.appendChild(mapCardItem);
-
         initElement(tree.asElement());
 
+    }
+
+    @Override
+    public void addTreeItem(String title, String key) {
+
+        TreeItem currentItem = TreeItem.create(title, Icons.ALL.map());
+        currentItem.addClickListener(e -> getController().doNavigateTo(key));
+        this.tree.appendChild(currentItem);
     }
 
 }

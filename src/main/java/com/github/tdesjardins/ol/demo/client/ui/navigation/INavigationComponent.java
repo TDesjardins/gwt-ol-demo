@@ -10,4 +10,7 @@ public interface INavigationComponent extends IsComponent<INavigationComponent.C
 
         void doNavigateTo(String target);
     }
+
+    void addTreeItem(String title, String url);
+
 }
