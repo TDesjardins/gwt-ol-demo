@@ -14,6 +14,7 @@ public class NavigationComponent extends AbstractComponent<INavigationComponent.
     public NavigationComponent() {
         super();
         this.tree = Tree.create("Navigation");
+        this.tree.autoHeight();
     }
 
     @Override
