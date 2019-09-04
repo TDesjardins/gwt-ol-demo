@@ -6,6 +6,7 @@ import com.github.nalukit.nalu.client.component.annotation.Controller;
 import com.github.nalukit.nalu.client.exception.RoutingInterceptionException;
 import com.github.tdesjardins.ol.demo.client.GwtOlDemoContext;
 import com.github.tdesjardins.ol.demo.client.event.UnFitLayoutEvent;
+import com.github.tdesjardins.ol.demo.client.example.Example;
 import com.github.tdesjardins.ol.demo.client.example.OLExampleType;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.core.client.Scheduler;
@@ -25,10 +26,28 @@ implements IsMapExampleComponent.Controller {
     }
 
     @Override
+    public void activate() {
+
+        if (this.example != null) {
+
+            boolean containsMap = this.component.containsMap(this.example);
+            this.component.setMapId(example);
+
+            if (!containsMap) {
+                Example example = OLExampleType.valueOf(this.example).getExample();
+
+                Scheduler.get().scheduleDeferred(() -> example.show(this.example));
+            }
+
+        }
+
+    }
+
+    @Override
     public void start() {
         this.eventBus.fireEvent(new UnFitLayoutEvent());
-        //this.router.storeInCache(this);
-        
+        this.router.storeInCache(this);
+
         if (example == null || example.isEmpty()) {
             example = "AnimationExample";
         }
