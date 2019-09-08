@@ -28,18 +28,7 @@ implements IsMapExampleComponent.Controller {
     @Override
     public void activate() {
 
-        if (this.example != null) {
-
-            boolean containsMap = this.component.containsMap(this.example);
-            this.component.setMapId(example);
-
-            if (!containsMap) {
-                Example example = OLExampleType.valueOf(this.example).getExample();
-
-                Scheduler.get().scheduleDeferred(() -> example.show(this.example));
-            }
-
-        }
+        this.showMap();
 
     }
 
@@ -47,20 +36,22 @@ implements IsMapExampleComponent.Controller {
     public void start() {
         this.eventBus.fireEvent(new UnFitLayoutEvent());
         this.router.storeInCache(this);
+        this.showMap();
 
-        if (example == null || example.isEmpty()) {
-            example = "AnimationExample";
+    }
+
+    private void showMap() {
+
+        if (this.example == null || this.example.isEmpty()) {
+            this.example = "AnimationExample";
         }
 
-        if (example != null) {
-            for (OLExampleType currentExample : OLExampleType.values()) {
+        boolean containsMap = this.component.containsMap(this.example);
+        this.component.setMapId(example);
 
-                if (currentExample.name().equals(example)) {
-                    component.setMapId(example);
-                    Scheduler.get().scheduleDeferred(() -> currentExample.getExample().show(currentExample.name()));
-                }
-
-            }
+        if (!containsMap) {
+            Example currentExample = OLExampleType.valueOf(this.example).getExample();
+            Scheduler.get().scheduleDeferred(() -> currentExample.show(this.example));
         }
 
     }
