@@ -20,7 +20,7 @@ import java.lang.Override;
 public class MapExampleController extends AbstractComponentController<GwtOlDemoContext, IsMapExampleComponent, HTMLElement>
 implements IsMapExampleComponent.Controller {
 
-    private String example;
+    private String mapId;
 
     public MapExampleController() {
     }
@@ -42,16 +42,16 @@ implements IsMapExampleComponent.Controller {
 
     private void showMap() {
 
-        if (this.example == null || this.example.isEmpty()) {
-            this.example = "AnimationExample";
+        if (this.mapId == null || this.mapId.isEmpty()) {
+            this.mapId = OLExampleType.AnimationExample.name();
         }
 
-        boolean containsMap = this.component.containsMap(this.example);
-        this.component.setMapId(example);
+        boolean containsMap = this.component.containsMap(this.mapId);
+        Example currentExample = OLExampleType.valueOf(this.mapId).getExample();
+        this.component.setMapExample(this.mapId, currentExample);
 
         if (!containsMap) {
-            Example currentExample = OLExampleType.valueOf(this.example).getExample();
-            Scheduler.get().scheduleDeferred(() -> currentExample.show(this.example));
+            Scheduler.get().scheduleDeferred(() -> currentExample.show(this.mapId));
         }
 
     }
@@ -59,7 +59,7 @@ implements IsMapExampleComponent.Controller {
 
     @AcceptParameter("example")
     public void setId(String example) throws RoutingInterceptionException {
-        this.example = example;
+        this.mapId = example;
     }
 
 }

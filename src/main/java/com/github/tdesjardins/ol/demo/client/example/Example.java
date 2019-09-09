@@ -29,4 +29,6 @@ public interface Example {
      */
     void show(String exampleId);
 
+    String getDescription();
+
 }

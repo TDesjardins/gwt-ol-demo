@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2014, 2018 gwt-ol3
+ * Copyright 2014, 2019 gwt-ol
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -150,6 +150,11 @@ public class SelectFeaturesExample implements Example {
 
         });
 
+    }
+
+    @Override
+    public String getDescription() {
+        return "Example for feature selection.";
     }
 
 }

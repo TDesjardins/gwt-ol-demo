@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2014, 2017 gwt-ol3
+ * Copyright 2014, 2019 gwt-ol
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -123,6 +123,11 @@ public class MarkerExample implements Example {
         map.addInteraction(new KeyboardZoom());
         map.addControl(new Rotate());
 
+    }
+
+    @Override
+    public String getDescription() {
+        return "Example about using markers.";
     }
 
 }

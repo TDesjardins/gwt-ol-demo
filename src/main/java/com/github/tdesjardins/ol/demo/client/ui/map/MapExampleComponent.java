@@ -1,6 +1,7 @@
 package com.github.tdesjardins.ol.demo.client.ui.map;
 
 import com.github.nalukit.nalu.client.component.AbstractComponent;
+import com.github.tdesjardins.ol.demo.client.example.Example;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -44,7 +45,7 @@ public class MapExampleComponent extends AbstractComponent<IsMapExampleComponent
     }
 
     @Override
-    public void setMapId(String mapId) {
+    public void setMapExample(String mapId, Example mapExample) {
 
         this.container.setInnerHtml("");
 
@@ -55,7 +56,7 @@ public class MapExampleComponent extends AbstractComponent<IsMapExampleComponent
             card.fitContent();
             card.getBody().setId(mapId);
             card.setTitle(mapId);
-            card.setDescription(mapId);
+            card.setDescription(mapExample.getDescription());
 
             this.mapContainers.put(mapId, card);
         }

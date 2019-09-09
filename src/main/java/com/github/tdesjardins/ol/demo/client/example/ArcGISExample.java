@@ -88,4 +88,9 @@ public class ArcGISExample implements Example {
 
     }
 
+    @Override
+    public String getDescription() {
+        return "Example with ArcGIS Server layer";
+    }
+
 }

@@ -96,5 +96,10 @@ public class ConstrainedViewExample implements Example {
 
     }
 
+    @Override
+    public String getDescription() {
+        return "Example for contrained view.";
+    }
+
 }
 

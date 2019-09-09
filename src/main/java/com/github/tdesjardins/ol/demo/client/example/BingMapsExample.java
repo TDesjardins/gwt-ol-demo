@@ -95,4 +95,9 @@ public class BingMapsExample implements Example {
 
     }
 
+    @Override
+    public String getDescription() {
+        return "Example with BingMaps source";
+    }
+
 }

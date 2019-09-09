@@ -105,5 +105,10 @@ public class MapGuideExample implements Example {
 
     }
 
+    @Override
+    public String getDescription() {
+        return "Example with MapGuide source.";
+    }
+
 }
 

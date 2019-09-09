@@ -121,4 +121,9 @@ public class GeoJsonExample implements Example {
 
     }
 
+    @Override
+    public String getDescription() {
+        return "Example of GeoJSON format.";
+    }
+
 }

@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright 2014, 2018 gwt-ol3
+ * Copyright 2014, 2019 gwt-ol
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -103,6 +103,11 @@ public class OsmExample implements Example {
         map.addInteraction(new KeyboardPan());
         map.addInteraction(new KeyboardZoom());
 
+    }
+
+    @Override
+    public String getDescription() {
+        return "Example with OSM layer and tile debug layer.";
     }
 
 }

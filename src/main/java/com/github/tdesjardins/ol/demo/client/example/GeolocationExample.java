@@ -148,5 +148,10 @@ public class GeolocationExample implements Example {
 
     }
 
+    @Override
+    public String getDescription() {
+        return "Example with Geolocation.";
+    }
+
 }
 

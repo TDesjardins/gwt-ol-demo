@@ -97,5 +97,10 @@ public class GpxExample implements Example{
 
     }
 
+    @Override
+    public String getDescription() {
+        return "Example with GPX Layers.";
+    }
+
 }
 
