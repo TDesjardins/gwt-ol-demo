@@ -7,9 +7,12 @@ import com.github.nalukit.nalu.client.exception.RoutingInterceptionException;
 import com.github.tdesjardins.ol.demo.client.GwtOlDemoContext;
 import com.github.tdesjardins.ol.demo.client.event.UnFitLayoutEvent;
 import com.github.tdesjardins.ol.demo.client.example.OLExampleType;
+import com.google.gwt.core.client.GWT;
 import com.google.gwt.core.client.Scheduler;
 
 import elemental2.dom.HTMLElement;
+import org.dominokit.domino.ui.dialogs.MessageDialog;
+
 import java.lang.Override;
 
 @Controller(route = "/application/map/:example", selector = "content", componentInterface = IsMapExampleComponent.class, component = MapExampleComponent.class)
@@ -23,7 +26,6 @@ implements IsMapExampleComponent.Controller {
 
     @Override
     public void start() {
-
         this.eventBus.fireEvent(new UnFitLayoutEvent());
         //this.router.storeInCache(this);
         
@@ -43,6 +45,7 @@ implements IsMapExampleComponent.Controller {
         }
 
     }
+
 
     @AcceptParameter("example")
     public void setId(String example) throws RoutingInterceptionException {
