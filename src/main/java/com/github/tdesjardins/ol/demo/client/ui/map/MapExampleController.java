@@ -8,11 +8,9 @@ import com.github.tdesjardins.ol.demo.client.GwtOlDemoContext;
 import com.github.tdesjardins.ol.demo.client.event.UnFitLayoutEvent;
 import com.github.tdesjardins.ol.demo.client.example.Example;
 import com.github.tdesjardins.ol.demo.client.example.OLExampleType;
-import com.google.gwt.core.client.GWT;
 import com.google.gwt.core.client.Scheduler;
 
 import elemental2.dom.HTMLElement;
-import org.dominokit.domino.ui.dialogs.MessageDialog;
 
 import java.lang.Override;
 
