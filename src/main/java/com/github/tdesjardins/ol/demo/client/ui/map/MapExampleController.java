@@ -4,6 +4,7 @@ import com.github.nalukit.nalu.client.component.AbstractComponentController;
 import com.github.nalukit.nalu.client.component.annotation.AcceptParameter;
 import com.github.nalukit.nalu.client.component.annotation.Controller;
 import com.github.nalukit.nalu.client.exception.RoutingInterceptionException;
+import com.github.nalukit.nalu.client.seo.SeoDataProvider;
 import com.github.tdesjardins.ol.demo.client.GwtOlDemoContext;
 import com.github.tdesjardins.ol.demo.client.event.UnFitLayoutEvent;
 import com.github.tdesjardins.ol.demo.client.example.Example;
@@ -47,11 +48,25 @@ implements IsMapExampleComponent.Controller {
         boolean containsMap = this.component.containsMap(this.mapId);
         Example currentExample = OLExampleType.valueOf(this.mapId).getExample();
         this.component.setMapExample(this.mapId, currentExample);
+        this.setMetaTags(currentExample);
+
 
         if (!containsMap) {
             Scheduler.get().scheduleDeferred(() -> currentExample.show(this.mapId));
         }
 
+    }
+
+    private void setMetaTags(Example example) {
+
+        String description = "GWT-OL " + example.getDescription();
+
+        SeoDataProvider.get().setTitle(description);
+        SeoDataProvider.get().setDescription(description);
+        SeoDataProvider.get().setOgDescription(description);
+        SeoDataProvider.get().setOgTitle(description);
+        SeoDataProvider.get().setTwitterDescription(description);
+        SeoDataProvider.get().setTwitterTitle(description);
     }
 
 
