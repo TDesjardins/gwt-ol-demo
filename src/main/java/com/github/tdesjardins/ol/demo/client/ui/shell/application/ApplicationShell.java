@@ -6,8 +6,6 @@ import com.github.nalukit.nalu.client.exception.RoutingInterceptionException;
 import com.github.tdesjardins.ol.demo.client.GwtOlDemoContext;
 import com.github.tdesjardins.ol.demo.client.event.FitLayoutEvent;
 import com.github.tdesjardins.ol.demo.client.event.UnFitLayoutEvent;
-import com.google.gwt.core.client.GWT;
-import org.dominokit.domino.ui.dialogs.MessageDialog;
 import org.dominokit.domino.ui.layout.Layout;
 import org.dominokit.domino.ui.style.ColorScheme;
 
