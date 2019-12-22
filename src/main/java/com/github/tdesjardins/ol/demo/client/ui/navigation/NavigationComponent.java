@@ -9,7 +9,7 @@ import org.dominokit.domino.ui.tree.TreeItem;
 
 public class NavigationComponent extends AbstractComponent<INavigationComponent.Controller, HTMLElement> implements INavigationComponent {
 
-    private Tree tree;
+    private Tree<String> tree;
 
     public NavigationComponent() {
         super();
@@ -27,7 +27,7 @@ public class NavigationComponent extends AbstractComponent<INavigationComponent.
     @Override
     public void addTreeItem(String title, String key) {
 
-        TreeItem currentItem = TreeItem.create(title, Icons.ALL.map());
+        TreeItem<String> currentItem = TreeItem.create(title, Icons.ALL.map());
         currentItem.addClickListener(e -> getController().doNavigateTo(key));
         this.tree.appendChild(currentItem);
     }
