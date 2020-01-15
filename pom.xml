@@ -92,7 +92,7 @@
         </dependency>
         <dependency>
             <groupId>org.dominokit</groupId>
-            <artifactId>domino-ui-ol-addon</artifactId>
+            <artifactId>domino-ui-map-addon</artifactId>
             <version>${domino.version}</version>
         </dependency>
         <dependency>
