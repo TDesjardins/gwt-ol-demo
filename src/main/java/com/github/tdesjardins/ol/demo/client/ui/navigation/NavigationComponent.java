@@ -20,7 +20,7 @@ public class NavigationComponent extends AbstractComponent<INavigationComponent.
     @Override
     public void render() {
 
-        initElement(tree.asElement());
+        initElement(tree.element());
 
     }
 

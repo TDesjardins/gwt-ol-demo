@@ -25,7 +25,7 @@ public class StatusbarComponent extends AbstractComponent<IStatusbarComponent.Co
 
     @Override
     public void render() {
-        messageInfo = Elements.div().asElement();
+        messageInfo = Elements.div().element();
         initElement(Row.create()
         .style()
         .setMargin("0px")
@@ -38,6 +38,6 @@ public class StatusbarComponent extends AbstractComponent<IStatusbarComponent.Co
         .setTextAlign("right")
         .get()
         .appendChild(this.messageInfo))
-        .asElement());
+        .element());
     }
 }

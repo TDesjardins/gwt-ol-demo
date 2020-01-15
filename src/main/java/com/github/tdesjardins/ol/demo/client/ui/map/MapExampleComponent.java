@@ -16,7 +16,7 @@ import org.jboss.gwt.elemento.core.Elements;
 
 public class MapExampleComponent extends AbstractComponent<IsMapExampleComponent.Controller, HTMLElement> implements IsMapExampleComponent {
 
-    private HTMLDivElement element = Elements.div().asElement();
+    private HTMLDivElement element = Elements.div().element();
 
     private Column container;
 
@@ -29,7 +29,7 @@ public class MapExampleComponent extends AbstractComponent<IsMapExampleComponent
         this.container = Column.span12();
 
         this.element.appendChild(Row.create()
-                .addColumn(this.container).asElement());
+                .addColumn(this.container).element());
     }
 
     @Override
