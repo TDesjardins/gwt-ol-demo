@@ -8,7 +8,7 @@ import java.lang.String;
 import org.dominokit.domino.ui.grid.Column;
 import org.dominokit.domino.ui.grid.Row;
 import org.dominokit.domino.ui.style.Style;
-import org.jboss.gwt.elemento.core.Elements;
+import org.jboss.elemento.Elements;
 
 public class StatusbarComponent extends AbstractComponent<IStatusbarComponent.Controller, HTMLElement> implements IStatusbarComponent {
 
