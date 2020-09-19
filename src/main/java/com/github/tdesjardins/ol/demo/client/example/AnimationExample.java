@@ -19,10 +19,11 @@
 package com.github.tdesjardins.ol.demo.client.example;
 
 import com.github.tdesjardins.ol.demo.client.constants.DemoConstants;
-import com.google.gwt.core.client.Scheduler;
 
 import java.util.Arrays;
 import java.util.List;
+
+import org.gwtproject.core.client.Scheduler;
 
 import ol.Collection;
 import ol.Coordinate;
