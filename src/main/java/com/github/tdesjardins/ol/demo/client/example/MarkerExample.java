@@ -82,7 +82,7 @@ public class MarkerExample implements Example {
         Icon icon = new Icon(iconOptions);
         styleOptions.setImage(icon);
         Style style = new Style(styleOptions);
-        
+
         VectorLayerOptions vectorLayerOptions = OLFactory.createOptions();
         vectorLayerOptions.setSource(vectorSource);
         vectorLayerOptions.setStyle(style);
