@@ -32,6 +32,7 @@ public enum OLExampleType {
     GeolocationExample(new GeolocationExample()),
     GpxExample(new GpxExample()),
     GraticuleExample(new GraticuleExample()),
+    HeatmapExample(new HeatmapExample()),
     ImageExample(new StaticImageExample()),
     MapBoxExample(new MapboxExample()),
     MapEventsExample(new MapEventsExample()),
